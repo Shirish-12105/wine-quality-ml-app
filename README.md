@@ -21,3 +21,9 @@ Features:
 
 Live App:
 https://wine-q.streamlit.app
+
+
+Model: Random Forest Classifier
+Accuracy: 87%
+Dataset: Wine Quality Dataset
+Features: 11 chemical properties
