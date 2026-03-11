@@ -1,4 +1,9 @@
 # wine-quality-tester
+## App Screenshot
+
+![Wine Quality Tester](Screenshot 2026-03-11 234336.jpg)
+
+
 Machine learning web app that predicts wine quality using Streamlit.
 Wine Quality Tester ML App
 
