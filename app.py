@@ -2,61 +2,49 @@ import streamlit as st
 import joblib
 import numpy as np
 
-# Load trained model
+# Load model
 model = joblib.load("wine_quality_model.pkl")
 
-# Page configuration
-st.set_page_config(
-    page_title="Wine Quality Predictor",
-    page_icon="🍷",
-    layout="centered"
-)
+# Page settings
+st.set_page_config(page_title="Wine Quality Tester", page_icon="🍷")
 
-# Title
 st.title("🍷 Wine Quality Prediction App")
-st.write("Enter the chemical properties of wine to predict its quality.")
+st.write("Enter the wine chemical properties below to predict the quality.")
 
 st.markdown("---")
 
-# Two column layout
-col1, col2 = st.columns(2)
-
-with col1:
-    fixed_acidity = st.slider("Fixed Acidity", 4.0, 15.0, 7.0)
-    citric_acid = st.slider("Citric Acid", 0.0, 1.0, 0.3)
-    chlorides = st.slider("Chlorides", 0.01, 0.2, 0.05)
-    total_sulfur_dioxide = st.slider("Total Sulfur Dioxide", 10, 200, 50)
-    pH = st.slider("pH", 2.5, 4.0, 3.2)
-    alcohol = st.slider("Alcohol", 8.0, 15.0, 10.0)
-
-with col2:
-    volatile_acidity = st.slider("Volatile Acidity", 0.1, 1.5, 0.5)
-    residual_sugar = st.slider("Residual Sugar", 0.5, 10.0, 2.0)
-    free_sulfur_dioxide = st.slider("Free Sulfur Dioxide", 1, 70, 15)
-    density = st.slider("Density", 0.990, 1.005, 0.996)
-    sulphates = st.slider("Sulphates", 0.3, 2.0, 0.6)
+# Inputs (no limits)
+fixed_acidity = st.number_input("Fixed Acidity", step=0.1)
+volatile_acidity = st.number_input("Volatile Acidity", step=0.01)
+citric_acid = st.number_input("Citric Acid", step=0.01)
+residual_sugar = st.number_input("Residual Sugar", step=0.1)
+chlorides = st.number_input("Chlorides", step=0.001)
+free_sulfur_dioxide = st.number_input("Free Sulfur Dioxide", step=1)
+total_sulfur_dioxide = st.number_input("Total Sulfur Dioxide", step=1)
+density = st.number_input("Density", step=0.0001)
+pH = st.number_input("pH", step=0.01)
+sulphates = st.number_input("Sulphates", step=0.01)
+alcohol = st.number_input("Alcohol", step=0.1)
 
 st.markdown("---")
 
-# Predict button
+# Prediction button
 if st.button("Predict Wine Quality 🍷"):
 
-    # Arrange input data in correct order
     data = np.array([[fixed_acidity, volatile_acidity, citric_acid,
                       residual_sugar, chlorides, free_sulfur_dioxide,
                       total_sulfur_dioxide, density, pH, sulphates, alcohol]])
 
-    prediction = model.predict(data)[0]
+    prediction = model.predict(data)
 
     st.subheader("Prediction Result")
 
-    if prediction >= 7:
-        st.success(f"🍷 High Quality Wine (Score: {prediction})")
-    elif prediction >= 5:
-        st.info(f"🍷 Average Quality Wine (Score: {prediction})")
+    if prediction[0] >= 7:
+        st.success(f"🍷 High Quality Wine (Score: {prediction[0]})")
+    elif prediction[0] >= 5:
+        st.info(f"🍷 Average Quality Wine (Score: {prediction[0]})")
     else:
-        st.warning(f"🍷 Low Quality Wine (Score: {prediction})")
+        st.warning(f"🍷 Low Quality Wine (Score: {prediction[0]}")
 
 st.markdown("---")
-
-st.caption("Machine Learning model built with Scikit-learn and deployed using Streamlit.")
+st.caption("Built using Streamlit and Scikit-learn")
