@@ -20,7 +20,7 @@ Features:
 - Deployed on Streamlit Cloud
 
 Live App:
-https://wine-q.streamlit.app
+https://wine-quality-tester-etr9vwy4rjfrgviyuxkcgo.streamlit.app/
 
 
 Model: Random Forest Classifier
