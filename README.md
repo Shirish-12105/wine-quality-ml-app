@@ -48,7 +48,7 @@ https://wine-quality-tester-etr9vwy4rjfrgviyuxkcgo.streamlit.app/
 
 ![App Screenshot](wapp.png)
 
-![App Screenshot 2]()
+![App Screenshot 2](wine .png)
 
 📌 How to Run
 
