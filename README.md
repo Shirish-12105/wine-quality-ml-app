@@ -1,4 +1,4 @@
-🍷 Wine Quality Prediction App
+🍷 Wine Quality Prediction ML App
 
 This project is a Machine Learning web application that predicts the quality of wine based on physicochemical properties.
 
@@ -6,15 +6,25 @@ This project is a Machine Learning web application that predicts the quality of 
 
 - Interactive UI built using Streamlit
 - Predicts wine quality instantly
-- Uses machine learning model trained on real dataset
-- Provides insights about wine characteristics
+- Real-time user input
+- Data-driven insights
 
 🧠 Machine Learning Model
 
 - Algorithm: Linear Regression
-- Dataset: Wine Quality Dataset (UCI)
-- Input Features:
-  - Acidity, pH, Alcohol, Sulphates, etc.
+- Dataset: Wine Quality Dataset
+- Features used:
+  - Fixed acidity
+  - Volatile acidity
+  - Citric acid
+  - Residual sugar
+  - Chlorides
+  - Free sulfur dioxide
+  - Total sulfur dioxide
+  - Density
+  - pH
+  - Sulphates
+  - Alcohol
 
 📊 Sample Output
 
@@ -22,18 +32,21 @@ Predicted Wine Quality: 6 (Average Quality 🍷)
 
 💡 Insight
 
-Higher alcohol and sulphates tend to positively impact wine quality.
+Higher alcohol and sulphates tend to positively influence wine quality.
 
 🛠 Tech Stack
 
 - Python
 - Scikit-learn
 - Streamlit
+- Pandas, NumPy
 
 🌐 Live Demo
-
-"Click here to try the app" 
 https://wine-quality-tester-etr9vwy4rjfrgviyuxkcgo.streamlit.app/
+
+📸 App Preview
+
+"App Screenshot" 
 
 📌 How to Run
 
