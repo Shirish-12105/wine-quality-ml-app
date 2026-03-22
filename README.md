@@ -44,9 +44,11 @@ Higher alcohol and sulphates tend to positively influence wine quality.
 🌐 Live Demo
 https://wine-quality-tester-etr9vwy4rjfrgviyuxkcgo.streamlit.app/
 
-📸 App Preview
+## 📸 App Preview
 
-"App Screenshot" 
+![App Screenshot](wapp.png)
+
+![App Screenshot 2](wine .png)
 
 📌 How to Run
 
